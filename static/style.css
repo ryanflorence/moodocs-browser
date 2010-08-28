@@ -1,0 +1,303 @@
+/* @override http://localhost:8888/static/style.css */
+
+/* @override http://localhost:8888/style.css */
+
+#nav * {
+	/* I know ... whatever */
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: 'helvetica';
+	font-size: 10pt;
+}
+
+#container {
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	overflow: hidden;
+}
+
+#nav {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 250px;
+	bottom: 0;
+	overflow: auto;
+	background: #eee;
+}
+
+#handle {
+	width: 10px;
+	position: absolute;
+	left: 250px;
+	top: 0;
+	bottom: 0;
+	background: url(/static/grip.png) center top repeat-y;
+	cursor: col-resize;
+	z-index: 1;
+}
+
+#doc {
+	position: absolute;
+	left: 260px;
+	right: 0;
+	top: 0;
+	bottom: 0;
+}
+
+#docFrame {
+	border: 0;
+}
+
+#nav h4 {
+	margin-top: 1em;
+	margin-bottom: 0.5em;
+	background: #585858;
+	font-weight: normal;
+	color: #fff;
+	padding: 5pt;
+	-webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.5);
+}
+
+#nav h5 a {
+	margin-top: 1em;
+	margin-bottom: 0.5em;
+	font-size: 12pt;
+	font-weight: normal;
+	display: block;
+}
+
+#nav a {
+	display: block;
+	white-space: nowrap;
+	padding: 0 5pt;
+	text-decoration: none;
+}
+
+a {
+	color: #6B7B95;
+}
+
+a:visited {
+	color: #6B7B95;
+}
+
+a:hover,
+a:active {
+	color: #E79D35;
+}
+
+/* @group Main */
+
+ul li {
+    list-style: square;
+}
+
+#footy {
+    text-align: right;
+    margin-top: 30px;
+}
+
+#menu a, #main-menu a {
+    display: block;
+}
+
+#main-menu {
+    font-size: 1.1em;
+}
+
+#main-menu div {
+    text-align: right;
+}
+
+#main-menu h4 {
+    font-weight: bold;
+    border-bottom: 1px solid #ddd;
+    margin: 10px 0;
+    padding-bottom: 2px;
+}
+
+#doc h1 {
+    font-size: 2.5em;
+}
+
+p.description {
+    font-size: 1.2em;
+}
+
+pre {
+    background: #fff;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+    padding: 5px 7px;
+    overflow: auto;
+    font-size: 12px;
+}
+
+/* @end */
+
+/* @group Headings */
+
+#doc h1, #doc h2 {
+    border-bottom: 1px solid #ddd;
+}
+
+#doc h1 {
+    padding-bottom: 0.3em;
+}
+
+h1 a:link, h1 a:visited {
+    color: #c17878;
+    text-decoration: none;
+}
+
+h2 a:link, h2 a:visited {
+    color: #78ba91;
+    text-decoration: none;
+}
+
+#menu h4 {
+    padding: 10px 0;
+    margin: 0;
+    font-weight: bold;
+}
+
+/* @end */
+
+/* @group Blueprint */
+
+.r-border {
+  padding-right: 24px;
+  margin-right: 25px;
+  border-right: 1px solid #ddd;
+}
+
+.l-border {
+  padding-left: 25px;
+  margin-left: 14px;
+  border-left: 1px solid #ddd;
+}
+
+.b-border {
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.t-border {
+  padding-top: 10px;
+  margin-top: 10px;
+  border-top: 1px solid #ddd;
+}
+
+/* @end */
+
+/* @group geshi */
+
+.kw1 {
+    color: #1b609a;
+}
+
+.kw2 {
+    color: #9a6f1b;
+}
+
+.me1 {
+    color: #666;
+}
+
+.kw3, .re0, .sc1 {
+    color: #784e0c;
+}
+
+.br0 {
+    color: #444;
+}
+
+.st0 {
+    color: #489a1b;
+}
+
+.co1, .coMULTI {
+    color: #888;
+}
+
+.nu0 {
+    color: #70483d;
+}
+
+/* @end */
+
+/* @group Google */
+
+#submenu {
+    text-align: right;
+    padding: 0.3em 0;
+    background: #eee url(/assets/images/gradient-bottom.png) bottom left repeat-x;
+    border-bottom: 1px solid #ccc;
+}
+
+#query {
+    border: 1px #bbb solid;
+    padding: 4px 5px 2px;
+    font-size: 11px;
+    font-family: Helvetica, Arial;
+    width: 250px;
+}
+    #query.labelled {
+        color: #AAA;
+        font-style: italic;
+        -webkit-appearance: textfield !important;
+    }
+
+#submenu-wrapper {
+    height: 23px;
+    position: relative;
+}
+
+#docs-lib-links {
+    float: left;
+    height: 36px;
+    left: 0;
+    position: relative;
+    top: -9px;
+    width: 170px;
+}
+
+#docs-lib-links a, #docs-lib-links span {
+    display: block;
+    float: left;
+    padding-top: 4px;
+    height: 23px;
+    padding-right: 8px;
+}
+
+#docs-lib-links a {
+    text-decoration: none;
+    font-weight: bold;
+    color: #333;
+    display: block;
+    float: left;
+    font-weight: bold;
+    height: 26px;
+    padding-top: 10px;
+    text-align: center;
+    width: 74px;
+}
+
+#docs-lib-links span {
+    display: none;
+}
+
+#docs-lib-links a.selected {
+    background: url("/assets/images/tab.png") 0 0 no-repeat;
+    color: #B86364;
+}
+
+/* @end */
