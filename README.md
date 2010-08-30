@@ -18,10 +18,9 @@ Instructions
         # Doc libraries
         # paths are relative to this file (or absolute)
         docs:
-          - '../core'
-          - '../more'
+          core: '/Users/rpflo/OpenSource/mootools-core/Docs'
+          more: '../more'
 
-    So the docs are siblings of this repository.  You can point to wherever you want.
     
 3. Start the server
 
