@@ -74,5 +74,9 @@ http.createServer(function(request, response) {
 	});  
 }).listen(config.port);
 
-sys.puts("Server running at http://localhost:"+config.port+"/");
+sys.puts ("Server running at http://localhost:"+config.port+"/");
+sys.puts ("Libraries created at: ");
+docNames.forEach(function(lib){
+	sys.puts ("\thttp://localhost:" + config.port + "/" + lib + "/");
+})
 sys.puts('CTRL-C To shutdown')
