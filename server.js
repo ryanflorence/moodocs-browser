@@ -19,14 +19,14 @@ var sys      = require("sys")
 String.prototype.toHTML  = function(){ return showdown.makeHTML(this); };
 Array.prototype.getLast  = function(){ return (this.length) ? this[this.length - 1] : null; }
 Array.prototype.contains = function(item, from){ return this.indexOf(item, from) != -1; }
-var docNames = config.docs.map(function(item){ return item.split('/').getLast(); });
+
 
 builder.buildNav(config.docs);
 
 http.createServer(function(request, response) {  
 	var filename
 	  , uri      = url.parse(request.url).pathname
-	  , isIndex  = docNames.contains(uri.slice(1,-1))
+	  , isIndex  = !!config.docs[uri.slice(1,-1)]
 	  , isRoot   = uri == '/'
 	  , isStatic = uri.match(/^\/static/)
 	  , markdown = !(isRoot || isIndex || isStatic);
@@ -39,15 +39,13 @@ http.createServer(function(request, response) {
 		filename = '.' + uri;
 	} else {
 		var lib = uri.split('/')[1];
-		var index = docNames.indexOf(lib);
-		filename = path.join(config.docs[index], uri.replace('/'+lib, '').replace(/\/$/, '') + '.md');
-		console.log('filename: ', filename);
+		filename = path.join(config.docs[lib], uri.replace('/'+lib, '').replace(/\/$/, '') + '.md');
 	}
 	path.exists(filename, function(exists) {  
 		// file not found
 		if(!exists) {  
 			response.writeHead(404, {"Content-Type": "text/plain"});  
-			response.write("404 Not Found\n");  
+			response.write("404 Not Found\n");
 			response.end();  
 			return;  
 		}
@@ -65,6 +63,7 @@ http.createServer(function(request, response) {
 			if (markdown){
 				var template = jt.Template(fs.readFileSync('./templates/doc.html').toString());
 				file = template.expand({content: file.toHTML()});
+				console.log('/GET ' + uri);
 			}			
 			response.write(file, "binary");  
 			response.end();  
@@ -76,7 +75,8 @@ http.createServer(function(request, response) {
 
 sys.puts ("Server running at http://localhost:"+config.port+"/");
 sys.puts ("Libraries created at: ");
-docNames.forEach(function(lib){
+for (lib in config.docs){
 	sys.puts ("\thttp://localhost:" + config.port + "/" + lib + "/");
-})
+};
+
 sys.puts('CTRL-C To shutdown')

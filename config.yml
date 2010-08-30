@@ -4,6 +4,6 @@ port: 8888
 # Doc libraries
 # paths are relative to this file (or absolute)
 docs:
-  - '../core'
-  - '../more'
+  core: '/Users/rpflo/OpenSource/mootools-core/Docs'
+  more: '../more'
 
