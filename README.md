@@ -1,23 +1,31 @@
 MooTools Documentation Browser with Node.js
 ===========================================
 
-Plan to make this more configurable, but atm do this:
+An "alternative" MooTools documentation viewer build with Node.
 
 Instructions
 ------------
 
-1. Place this directory as a sibling to the `Docs` folder in the MooTools Core or MooTools More repositories (I renamed it to browser).
+1. Clone the repository
 
-        mootools-core/
-          Docs/
-          browser/
+        $ git clone git://github.com/rpflorence/moodocs-browser.git
 
-2. `cd` into the docs folder.
+2. Configure the app.  Open up `config.yml` and specify the paths to the directories you want to be served.  The default looks like this:
 
-        $ cd mootools-core/Docs
+        # port you want to the node server to listen to
+        port: 8888
 
+        # Doc libraries
+        # paths are relative to this file (or absolute)
+        docs:
+          - '../core'
+          - '../more'
+
+    So the docs are siblings of this repository.  You can point to wherever you want.
+    
 3. Start the server
 
-        $ node ../browser/server.js
+        $ node server.js
 
-Visit [http://localhost:8888](http://localhost:8888)!
+
+It'll kick out the URLs for each library in the console.
