@@ -7,6 +7,11 @@
 </head>
 <body>
 
+<div id=libraries>
+	{.repeated section libraries}
+		<a href="{url}">{title}</a>
+	{.end}
+</div>
 <div id=container>
 	<div id=nav>
 		{.section categories}
@@ -33,7 +38,7 @@
 	</div>
 	<div id=handle></div>
 	<div id=doc>
-		<iframe id="docFrame" name="docFrame" src="/Core/Core.md" width="100%" height="100%" frameborder="0"></iframe>
+		<iframe id="docFrame" name="docFrame" src="" width="100%" height="100%" frameborder="0"></iframe>
 	</div>
 	
 </div>
